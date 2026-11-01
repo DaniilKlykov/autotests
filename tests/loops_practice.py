@@ -21,9 +21,12 @@ def monitor_load() -> None:
         current_load = random.randint(MIN_LOAD, MAX_LOAD)
 
         # Формируем сообщение
-        status = "⚠️  ПРЕВЫШЕНИЕ!" if current_load > LOAD_THRESHOLD else "✅  Норма"
+        status = (
+            "⚠️  ПРЕВЫШЕНИЕ!" if current_load > LOAD_THRESHOLD else "✅  Норма"
+        )
 
-        print(f"Итерация {iteration:2d}: нагрузка {current_load:3d}%  {status}")
+        print(f"Итерация {iteration:2d}: \
+              нагрузка {current_load:3d}%  {status}")
 
         # Пауза перед следующей итерацией
         time.sleep(SLEEP_SECONDS)
